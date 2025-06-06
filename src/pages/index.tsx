@@ -142,7 +142,7 @@ export default function Home() {
               setState(s);
             }} 
           />
-          <CitySelector state={displayName} onChange={setCity} />
+          <CitySelector state={displayName} onCitySelect={setCity} selectedCity={city} />
         </section>
         <section className="card">
           <h2 style={{ color: '#3F88C5', fontWeight: 600 }}>Options</h2>
