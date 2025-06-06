@@ -5,7 +5,7 @@ const safeCityData = cityData as Record<string, Record<string, any>>;
 
 interface CitySelectorProps {
   state: string;
-  onCitySelect: (city: any) => void;
+  onCitySelect: (city: string) => void;
   selectedCity?: string;
 }
 
@@ -14,17 +14,14 @@ const CitySelector: React.FC<CitySelectorProps> = ({
   onCitySelect, 
   selectedCity 
 }) => {
-  // Filter cities by state
-  const citiesInState = Object.values(safeCityData)
-    .flat()
-    .filter((city: any) => city.state && city.state.toLowerCase() === state.toLowerCase());
+  // Get city names for the selected state
+  const citiesInState = state && safeCityData[state]
+    ? Object.keys(safeCityData[state])
+    : [];
 
   const handleCityChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedCityName = event.target.value;
-    const city = citiesInState.find((c: any) => c.name === selectedCityName);
-    if (city) {
-      onCitySelect(city);
-    }
+    onCitySelect(selectedCityName);
   };
 
   return (
@@ -37,9 +34,9 @@ const CitySelector: React.FC<CitySelectorProps> = ({
         className="city-dropdown"
       >
         <option value="">Choose a city...</option>
-        {citiesInState.map((city: any) => (
-          <option key={city.name} value={city.name}>
-            {city.name}
+        {citiesInState.map((cityName: string) => (
+          <option key={cityName} value={cityName}>
+            {cityName}
           </option>
         ))}
       </select>
