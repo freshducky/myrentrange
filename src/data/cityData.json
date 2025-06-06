@@ -18,9 +18,29 @@
     "Tempe": { "medianRent": 1300, "medianIncome": 48000 }
   },
   "California": {
-    "Los Angeles": { "medianRent": 2450, "medianIncome": 52000 },
+    "Los Angeles": {
+      "medianRent": 2450,
+      "medianIncome": 52000,
+      "neighborhoods": {
+        "Downtown": { "medianRent": 2200, "medianIncome": 55000 },
+        "Hollywood": { "medianRent": 2000, "medianIncome": 52000 },
+        "Santa Monica": { "medianRent": 2800, "medianIncome": 75000 },
+        "Venice": { "medianRent": 2600, "medianIncome": 70000 },
+        "Beverly Hills": { "medianRent": 3500, "medianIncome": 100000 }
+      }
+    },
     "San Diego": { "medianRent": 2400, "medianIncome": 54000 },
-    "San Francisco": { "medianRent": 3100, "medianIncome": 70000 },
+    "San Francisco": {
+      "medianRent": 3100,
+      "medianIncome": 70000,
+      "neighborhoods": {
+        "Financial District": { "medianRent": 3200, "medianIncome": 85000 },
+        "Mission": { "medianRent": 2800, "medianIncome": 70000 },
+        "Marina": { "medianRent": 3000, "medianIncome": 80000 },
+        "Hayes Valley": { "medianRent": 2900, "medianIncome": 75000 },
+        "Noe Valley": { "medianRent": 3100, "medianIncome": 80000 }
+      }
+    },
     "San Jose": { "medianRent": 2800, "medianIncome": 85000 },
     "Sacramento": { "medianRent": 1800, "medianIncome": 48000 },
     "Oakland": { "medianRent": 2200, "medianIncome": 55000 },
@@ -78,7 +98,17 @@
     "Hilo": { "medianRent": 1500, "medianIncome": 45000 }
   },
   "Illinois": {
-    "Chicago": { "medianRent": 1800, "medianIncome": 55000 },
+    "Chicago": {
+      "medianRent": 1800,
+      "medianIncome": 55000,
+      "neighborhoods": {
+        "Loop": { "medianRent": 2000, "medianIncome": 65000 },
+        "Lincoln Park": { "medianRent": 1800, "medianIncome": 60000 },
+        "Wicker Park": { "medianRent": 1700, "medianIncome": 58000 },
+        "Lakeview": { "medianRent": 1600, "medianIncome": 55000 },
+        "River North": { "medianRent": 1900, "medianIncome": 62000 }
+      }
+    },
     "Aurora": { "medianRent": 1400, "medianIncome": 48000 },
     "Rockford": { "medianRent": 900, "medianIncome": 38000 },
     "Joliet": { "medianRent": 1200, "medianIncome": 42000 },
@@ -163,7 +193,17 @@
     "Rio Rancho": { "medianRent": 1200, "medianIncome": 45000 }
   },
   "New York": {
-    "New York City": { "medianRent": 3200, "medianIncome": 60000 },
+    "New York City": {
+      "medianRent": 3200,
+      "medianIncome": 60000,
+      "neighborhoods": {
+        "Manhattan": { "medianRent": 3500, "medianIncome": 85000 },
+        "Brooklyn": { "medianRent": 2800, "medianIncome": 65000 },
+        "Queens": { "medianRent": 2200, "medianIncome": 55000 },
+        "Bronx": { "medianRent": 1800, "medianIncome": 45000 },
+        "Staten Island": { "medianRent": 2000, "medianIncome": 50000 }
+      }
+    },
     "Buffalo": { "medianRent": 1200, "medianIncome": 42000 },
     "Rochester": { "medianRent": 1100, "medianIncome": 40000 },
     "Yonkers": { "medianRent": 1800, "medianIncome": 55000 },
@@ -228,7 +268,17 @@
     "Houston": { "medianRent": 1200, "medianIncome": 48000 },
     "San Antonio": { "medianRent": 1100, "medianIncome": 45000 },
     "Dallas": { "medianRent": 1300, "medianIncome": 52000 },
-    "Austin": { "medianRent": 1600, "medianIncome": 65000 },
+    "Austin": {
+      "medianRent": 1600,
+      "medianIncome": 65000,
+      "neighborhoods": {
+        "Downtown": { "medianRent": 1800, "medianIncome": 70000 },
+        "South Congress": { "medianRent": 1700, "medianIncome": 65000 },
+        "East Austin": { "medianRent": 1600, "medianIncome": 60000 },
+        "West Campus": { "medianRent": 1500, "medianIncome": 55000 },
+        "Hyde Park": { "medianRent": 1600, "medianIncome": 60000 }
+      }
+    },
     "Fort Worth": { "medianRent": 1200, "medianIncome": 48000 },
     "El Paso": { "medianRent": 900, "medianIncome": 38000 },
     "Arlington": { "medianRent": 1200, "medianIncome": 48000 },
@@ -250,7 +300,17 @@
     "Arlington": { "medianRent": 2000, "medianIncome": 85000 }
   },
   "Washington": {
-    "Seattle": { "medianRent": 2000, "medianIncome": 75000 },
+    "Seattle": {
+      "medianRent": 2000,
+      "medianIncome": 75000,
+      "neighborhoods": {
+        "Capitol Hill": { "medianRent": 2000, "medianIncome": 75000 },
+        "Ballard": { "medianRent": 1900, "medianIncome": 70000 },
+        "Queen Anne": { "medianRent": 2100, "medianIncome": 80000 },
+        "Fremont": { "medianRent": 1900, "medianIncome": 70000 },
+        "Belltown": { "medianRent": 2000, "medianIncome": 75000 }
+      }
+    },
     "Spokane": { "medianRent": 1200, "medianIncome": 45000 },
     "Tacoma": { "medianRent": 1400, "medianIncome": 52000 },
     "Vancouver": { "medianRent": 1300, "medianIncome": 50000 },
