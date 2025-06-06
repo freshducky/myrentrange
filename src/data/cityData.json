@@ -1,0 +1,335 @@
+{
+  "Alabama": {
+    "Birmingham": { "medianRent": 950, "medianIncome": 42000 },
+    "Montgomery": { "medianRent": 850, "medianIncome": 38000 },
+    "Mobile": { "medianRent": 900, "medianIncome": 40000 },
+    "Huntsville": { "medianRent": 1100, "medianIncome": 55000 }
+  },
+  "Alaska": {
+    "Anchorage": { "medianRent": 1300, "medianIncome": 65000 },
+    "Fairbanks": { "medianRent": 1200, "medianIncome": 60000 },
+    "Juneau": { "medianRent": 1400, "medianIncome": 70000 }
+  },
+  "Arizona": {
+    "Phoenix": { "medianRent": 1500, "medianIncome": 52000 },
+    "Tucson": { "medianRent": 1200, "medianIncome": 45000 },
+    "Mesa": { "medianRent": 1400, "medianIncome": 50000 },
+    "Scottsdale": { "medianRent": 1800, "medianIncome": 75000 },
+    "Tempe": { "medianRent": 1300, "medianIncome": 48000 }
+  },
+  "California": {
+    "Los Angeles": { "medianRent": 2450, "medianIncome": 52000 },
+    "San Diego": { "medianRent": 2400, "medianIncome": 54000 },
+    "San Francisco": { "medianRent": 3100, "medianIncome": 70000 },
+    "San Jose": { "medianRent": 2800, "medianIncome": 85000 },
+    "Sacramento": { "medianRent": 1800, "medianIncome": 48000 },
+    "Oakland": { "medianRent": 2200, "medianIncome": 55000 },
+    "Fresno": { "medianRent": 1300, "medianIncome": 42000 },
+    "Long Beach": { "medianRent": 2000, "medianIncome": 50000 },
+    "Anaheim": { "medianRent": 2100, "medianIncome": 52000 },
+    "Santa Ana": { "medianRent": 1900, "medianIncome": 48000 },
+    "Riverside": { "medianRent": 1700, "medianIncome": 45000 },
+    "Bakersfield": { "medianRent": 1200, "medianIncome": 40000 },
+    "Irvine": { "medianRent": 2600, "medianIncome": 90000 },
+    "San Bernardino": { "medianRent": 1400, "medianIncome": 38000 },
+    "Modesto": { "medianRent": 1300, "medianIncome": 42000 },
+    "Oxnard": { "medianRent": 2200, "medianIncome": 55000 },
+    "Fontana": { "medianRent": 1800, "medianIncome": 45000 },
+    "Moreno Valley": { "medianRent": 1600, "medianIncome": 42000 },
+    "Glendale": { "medianRent": 1900, "medianIncome": 48000 },
+    "Huntington Beach": { "medianRent": 2300, "medianIncome": 65000 }
+  },
+  "Colorado": {
+    "Denver": { "medianRent": 1800, "medianIncome": 58000 },
+    "Colorado Springs": { "medianRent": 1400, "medianIncome": 52000 },
+    "Aurora": { "medianRent": 1600, "medianIncome": 55000 },
+    "Fort Collins": { "medianRent": 1500, "medianIncome": 54000 },
+    "Boulder": { "medianRent": 1900, "medianIncome": 65000 }
+  },
+  "Connecticut": {
+    "Bridgeport": { "medianRent": 1500, "medianIncome": 45000 },
+    "New Haven": { "medianRent": 1300, "medianIncome": 42000 },
+    "Stamford": { "medianRent": 2000, "medianIncome": 75000 },
+    "Hartford": { "medianRent": 1200, "medianIncome": 38000 },
+    "Waterbury": { "medianRent": 1100, "medianIncome": 35000 }
+  },
+  "Florida": {
+    "Miami": { "medianRent": 2000, "medianIncome": 45000 },
+    "Orlando": { "medianRent": 1600, "medianIncome": 48000 },
+    "Tampa": { "medianRent": 1700, "medianIncome": 50000 },
+    "Jacksonville": { "medianRent": 1400, "medianIncome": 45000 },
+    "St. Petersburg": { "medianRent": 1600, "medianIncome": 48000 },
+    "Hialeah": { "medianRent": 1500, "medianIncome": 42000 },
+    "Fort Lauderdale": { "medianRent": 1800, "medianIncome": 52000 },
+    "Port St. Lucie": { "medianRent": 1600, "medianIncome": 48000 },
+    "Cape Coral": { "medianRent": 1700, "medianIncome": 50000 },
+    "Tallahassee": { "medianRent": 1200, "medianIncome": 42000 }
+  },
+  "Georgia": {
+    "Atlanta": { "medianRent": 1600, "medianIncome": 52000 },
+    "Augusta": { "medianRent": 1000, "medianIncome": 38000 },
+    "Columbus": { "medianRent": 950, "medianIncome": 35000 },
+    "Macon": { "medianRent": 900, "medianIncome": 32000 },
+    "Savannah": { "medianRent": 1200, "medianIncome": 42000 }
+  },
+  "Hawaii": {
+    "Honolulu": { "medianRent": 2200, "medianIncome": 65000 },
+    "Pearl City": { "medianRent": 2000, "medianIncome": 60000 },
+    "Hilo": { "medianRent": 1500, "medianIncome": 45000 }
+  },
+  "Illinois": {
+    "Chicago": { "medianRent": 1800, "medianIncome": 55000 },
+    "Aurora": { "medianRent": 1400, "medianIncome": 48000 },
+    "Rockford": { "medianRent": 900, "medianIncome": 38000 },
+    "Joliet": { "medianRent": 1200, "medianIncome": 42000 },
+    "Naperville": { "medianRent": 1800, "medianIncome": 85000 }
+  },
+  "Indiana": {
+    "Indianapolis": { "medianRent": 1100, "medianIncome": 45000 },
+    "Fort Wayne": { "medianRent": 900, "medianIncome": 42000 },
+    "Evansville": { "medianRent": 850, "medianIncome": 38000 },
+    "South Bend": { "medianRent": 900, "medianIncome": 40000 },
+    "Carmel": { "medianRent": 1500, "medianIncome": 85000 }
+  },
+  "Kentucky": {
+    "Lexington": { "medianRent": 1000, "medianIncome": 42000 },
+    "Louisville": { "medianRent": 950, "medianIncome": 40000 },
+    "Bowling Green": { "medianRent": 850, "medianIncome": 38000 }
+  },
+  "Louisiana": {
+    "New Orleans": { "medianRent": 1200, "medianIncome": 42000 },
+    "Baton Rouge": { "medianRent": 1100, "medianIncome": 40000 },
+    "Shreveport": { "medianRent": 900, "medianIncome": 35000 }
+  },
+  "Maine": {
+    "Portland": { "medianRent": 1500, "medianIncome": 48000 },
+    "Lewiston": { "medianRent": 1000, "medianIncome": 38000 },
+    "Bangor": { "medianRent": 900, "medianIncome": 35000 }
+  },
+  "Maryland": {
+    "Baltimore": { "medianRent": 1300, "medianIncome": 45000 },
+    "Rockville": { "medianRent": 1800, "medianIncome": 75000 },
+    "Germantown": { "medianRent": 1700, "medianIncome": 70000 },
+    "Silver Spring": { "medianRent": 1600, "medianIncome": 65000 },
+    "Columbia": { "medianRent": 1700, "medianIncome": 68000 }
+  },
+  "Massachusetts": {
+    "Boston": { "medianRent": 2200, "medianIncome": 65000 },
+    "Worcester": { "medianRent": 1300, "medianIncome": 45000 },
+    "Springfield": { "medianRent": 1100, "medianIncome": 38000 },
+    "Cambridge": { "medianRent": 2400, "medianIncome": 75000 },
+    "Lowell": { "medianRent": 1400, "medianIncome": 48000 }
+  },
+  "Michigan": {
+    "Detroit": { "medianRent": 1000, "medianIncome": 35000 },
+    "Grand Rapids": { "medianRent": 1100, "medianIncome": 42000 },
+    "Warren": { "medianRent": 1000, "medianIncome": 40000 },
+    "Sterling Heights": { "medianRent": 1200, "medianIncome": 45000 },
+    "Ann Arbor": { "medianRent": 1500, "medianIncome": 65000 }
+  },
+  "Minnesota": {
+    "Minneapolis": { "medianRent": 1400, "medianIncome": 55000 },
+    "St. Paul": { "medianRent": 1300, "medianIncome": 52000 },
+    "Rochester": { "medianRent": 1100, "medianIncome": 48000 },
+    "Duluth": { "medianRent": 900, "medianIncome": 42000 }
+  },
+  "Missouri": {
+    "Kansas City": { "medianRent": 1100, "medianIncome": 45000 },
+    "St. Louis": { "medianRent": 1000, "medianIncome": 42000 },
+    "Springfield": { "medianRent": 850, "medianIncome": 38000 },
+    "Columbia": { "medianRent": 1000, "medianIncome": 42000 }
+  },
+  "Nevada": {
+    "Las Vegas": { "medianRent": 1400, "medianIncome": 48000 },
+    "Reno": { "medianRent": 1300, "medianIncome": 45000 },
+    "Henderson": { "medianRent": 1500, "medianIncome": 52000 },
+    "North Las Vegas": { "medianRent": 1300, "medianIncome": 45000 }
+  },
+  "New Hampshire": {
+    "Manchester": { "medianRent": 1300, "medianIncome": 48000 },
+    "Nashua": { "medianRent": 1400, "medianIncome": 50000 },
+    "Concord": { "medianRent": 1200, "medianIncome": 45000 }
+  },
+  "New Jersey": {
+    "Newark": { "medianRent": 1500, "medianIncome": 45000 },
+    "Jersey City": { "medianRent": 2000, "medianIncome": 65000 },
+    "Paterson": { "medianRent": 1300, "medianIncome": 42000 },
+    "Elizabeth": { "medianRent": 1400, "medianIncome": 45000 },
+    "Edison": { "medianRent": 1800, "medianIncome": 75000 }
+  },
+  "New Mexico": {
+    "Albuquerque": { "medianRent": 1100, "medianIncome": 42000 },
+    "Las Cruces": { "medianRent": 900, "medianIncome": 38000 },
+    "Rio Rancho": { "medianRent": 1200, "medianIncome": 45000 }
+  },
+  "New York": {
+    "New York City": { "medianRent": 3200, "medianIncome": 60000 },
+    "Buffalo": { "medianRent": 1200, "medianIncome": 42000 },
+    "Rochester": { "medianRent": 1100, "medianIncome": 40000 },
+    "Yonkers": { "medianRent": 1800, "medianIncome": 55000 },
+    "Syracuse": { "medianRent": 1000, "medianIncome": 38000 },
+    "Albany": { "medianRent": 1400, "medianIncome": 45000 },
+    "New Rochelle": { "medianRent": 1700, "medianIncome": 52000 },
+    "Mount Vernon": { "medianRent": 1600, "medianIncome": 48000 },
+    "Schenectady": { "medianRent": 1000, "medianIncome": 38000 },
+    "Utica": { "medianRent": 900, "medianIncome": 35000 }
+  },
+  "North Carolina": {
+    "Charlotte": { "medianRent": 1300, "medianIncome": 48000 },
+    "Raleigh": { "medianRent": 1400, "medianIncome": 52000 },
+    "Greensboro": { "medianRent": 1000, "medianIncome": 42000 },
+    "Durham": { "medianRent": 1200, "medianIncome": 45000 },
+    "Winston-Salem": { "medianRent": 950, "medianIncome": 40000 }
+  },
+  "Ohio": {
+    "Columbus": { "medianRent": 1100, "medianIncome": 45000 },
+    "Cleveland": { "medianRent": 950, "medianIncome": 38000 },
+    "Cincinnati": { "medianRent": 1000, "medianIncome": 42000 },
+    "Toledo": { "medianRent": 850, "medianIncome": 35000 },
+    "Akron": { "medianRent": 900, "medianIncome": 38000 }
+  },
+  "Oklahoma": {
+    "Oklahoma City": { "medianRent": 950, "medianIncome": 42000 },
+    "Tulsa": { "medianRent": 900, "medianIncome": 40000 },
+    "Norman": { "medianRent": 1000, "medianIncome": 42000 }
+  },
+  "Oregon": {
+    "Portland": { "medianRent": 1600, "medianIncome": 55000 },
+    "Salem": { "medianRent": 1200, "medianIncome": 45000 },
+    "Eugene": { "medianRent": 1300, "medianIncome": 48000 },
+    "Gresham": { "medianRent": 1400, "medianIncome": 50000 },
+    "Hillsboro": { "medianRent": 1500, "medianIncome": 65000 }
+  },
+  "Pennsylvania": {
+    "Philadelphia": { "medianRent": 1300, "medianIncome": 45000 },
+    "Pittsburgh": { "medianRent": 1100, "medianIncome": 42000 },
+    "Allentown": { "medianRent": 1000, "medianIncome": 40000 },
+    "Erie": { "medianRent": 850, "medianIncome": 35000 },
+    "Reading": { "medianRent": 900, "medianIncome": 38000 }
+  },
+  "Rhode Island": {
+    "Providence": { "medianRent": 1300, "medianIncome": 45000 },
+    "Warwick": { "medianRent": 1200, "medianIncome": 42000 },
+    "Cranston": { "medianRent": 1300, "medianIncome": 45000 }
+  },
+  "South Carolina": {
+    "Columbia": { "medianRent": 1000, "medianIncome": 42000 },
+    "Charleston": { "medianRent": 1300, "medianIncome": 48000 },
+    "North Charleston": { "medianRent": 1100, "medianIncome": 45000 },
+    "Mount Pleasant": { "medianRent": 1500, "medianIncome": 65000 }
+  },
+  "Tennessee": {
+    "Nashville": { "medianRent": 1400, "medianIncome": 52000 },
+    "Memphis": { "medianRent": 950, "medianIncome": 38000 },
+    "Knoxville": { "medianRent": 1000, "medianIncome": 42000 },
+    "Chattanooga": { "medianRent": 1100, "medianIncome": 45000 }
+  },
+  "Texas": {
+    "Houston": { "medianRent": 1200, "medianIncome": 48000 },
+    "San Antonio": { "medianRent": 1100, "medianIncome": 45000 },
+    "Dallas": { "medianRent": 1300, "medianIncome": 52000 },
+    "Austin": { "medianRent": 1600, "medianIncome": 65000 },
+    "Fort Worth": { "medianRent": 1200, "medianIncome": 48000 },
+    "El Paso": { "medianRent": 900, "medianIncome": 38000 },
+    "Arlington": { "medianRent": 1200, "medianIncome": 48000 },
+    "Corpus Christi": { "medianRent": 1000, "medianIncome": 42000 },
+    "Plano": { "medianRent": 1500, "medianIncome": 75000 },
+    "Laredo": { "medianRent": 900, "medianIncome": 38000 }
+  },
+  "Utah": {
+    "Salt Lake City": { "medianRent": 1300, "medianIncome": 52000 },
+    "West Valley City": { "medianRent": 1200, "medianIncome": 48000 },
+    "Provo": { "medianRent": 1100, "medianIncome": 45000 },
+    "West Jordan": { "medianRent": 1300, "medianIncome": 52000 }
+  },
+  "Virginia": {
+    "Virginia Beach": { "medianRent": 1300, "medianIncome": 52000 },
+    "Norfolk": { "medianRent": 1100, "medianIncome": 45000 },
+    "Chesapeake": { "medianRent": 1300, "medianIncome": 52000 },
+    "Richmond": { "medianRent": 1200, "medianIncome": 48000 },
+    "Arlington": { "medianRent": 2000, "medianIncome": 85000 }
+  },
+  "Washington": {
+    "Seattle": { "medianRent": 2000, "medianIncome": 75000 },
+    "Spokane": { "medianRent": 1200, "medianIncome": 45000 },
+    "Tacoma": { "medianRent": 1400, "medianIncome": 52000 },
+    "Vancouver": { "medianRent": 1300, "medianIncome": 50000 },
+    "Bellevue": { "medianRent": 2200, "medianIncome": 95000 }
+  },
+  "Wisconsin": {
+    "Milwaukee": { "medianRent": 1100, "medianIncome": 42000 },
+    "Madison": { "medianRent": 1300, "medianIncome": 55000 },
+    "Green Bay": { "medianRent": 900, "medianIncome": 38000 },
+    "Kenosha": { "medianRent": 1000, "medianIncome": 42000 }
+  },
+  "District of Columbia": {
+    "Washington": {
+      "medianRent": 2200,
+      "medianIncome": 75000,
+      "neighborhoods": {
+        "Georgetown": { "medianRent": 2800, "medianIncome": 120000 },
+        "Capitol Hill": { "medianRent": 2400, "medianIncome": 85000 },
+        "Dupont Circle": { "medianRent": 2600, "medianIncome": 95000 },
+        "Adams Morgan": { "medianRent": 2300, "medianIncome": 80000 },
+        "Shaw": { "medianRent": 2100, "medianIncome": 78000 },
+        "Logan Circle": { "medianRent": 2500, "medianIncome": 90000 },
+        "Columbia Heights": { "medianRent": 2000, "medianIncome": 72000 },
+        "Navy Yard": { "medianRent": 2300, "medianIncome": 82000 },
+        "NoMa": { "medianRent": 2200, "medianIncome": 80000 },
+        "Foggy Bottom": { "medianRent": 2500, "medianIncome": 90000 },
+        "West End": { "medianRent": 2700, "medianIncome": 110000 },
+        "Mount Vernon Triangle": { "medianRent": 2400, "medianIncome": 85000 },
+        "H Street Corridor": { "medianRent": 2100, "medianIncome": 75000 },
+        "Petworth": { "medianRent": 1900, "medianIncome": 70000 },
+        "Brookland": { "medianRent": 1800, "medianIncome": 68000 },
+        "Takoma": { "medianRent": 1900, "medianIncome": 72000 },
+        "Woodley Park": { "medianRent": 2300, "medianIncome": 85000 },
+        "Cleveland Park": { "medianRent": 2200, "medianIncome": 82000 },
+        "U Street": { "medianRent": 2100, "medianIncome": 78000 },
+        "Kalorama": { "medianRent": 2600, "medianIncome": 95000 },
+        "Mount Pleasant": { "medianRent": 2000, "medianIncome": 75000 },
+        "Bloomingdale": { "medianRent": 1900, "medianIncome": 72000 },
+        "Eckington": { "medianRent": 2000, "medianIncome": 75000 },
+        "Union Market": { "medianRent": 2200, "medianIncome": 80000 },
+        "Southwest Waterfront": { "medianRent": 2300, "medianIncome": 82000 },
+        "The Wharf": { "medianRent": 2500, "medianIncome": 90000 },
+        "Penn Quarter": { "medianRent": 2400, "medianIncome": 85000 },
+        "Chinatown": { "medianRent": 2300, "medianIncome": 82000 },
+        "Downtown": { "medianRent": 2400, "medianIncome": 85000 }
+      }
+    }
+  },
+  "Idaho": {
+    "Boise": { "medianRent": 1300, "medianIncome": 52000 }
+  },
+  "Iowa": {
+    "Des Moines": { "medianRent": 1100, "medianIncome": 50000 }
+  },
+  "Kansas": {
+    "Wichita": { "medianRent": 1000, "medianIncome": 48000 }
+  },
+  "Mississippi": {
+    "Jackson": { "medianRent": 950, "medianIncome": 42000 }
+  },
+  "Montana": {
+    "Billings": { "medianRent": 1200, "medianIncome": 52000 }
+  },
+  "Nebraska": {
+    "Omaha": { "medianRent": 1100, "medianIncome": 50000 }
+  },
+  "North Dakota": {
+    "Fargo": { "medianRent": 1000, "medianIncome": 48000 }
+  },
+  "South Dakota": {
+    "Sioux Falls": { "medianRent": 1000, "medianIncome": 48000 }
+  },
+  "Vermont": {
+    "Burlington": { "medianRent": 1300, "medianIncome": 52000 }
+  },
+  "West Virginia": {
+    "Charleston": { "medianRent": 900, "medianIncome": 42000 }
+  },
+  "Wyoming": {
+    "Cheyenne": { "medianRent": 1100, "medianIncome": 50000 }
+  }
+} 

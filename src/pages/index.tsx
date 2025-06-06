@@ -1,0 +1,177 @@
+import React, { useState, useEffect } from 'react';
+import SalaryInput from '../components/SalaryInput';
+import StateSelector from '../components/StateSelector';
+import CitySelector from '../components/CitySelector';
+import NeighborhoodSelector from '../components/NeighborhoodSelector';
+import OptionToggles from '../components/OptionToggles';
+import RentRangeOutput from '../components/RentRangeOutput';
+import InsightsPanel from '../components/InsightsPanel';
+import taxRates from '../../data/taxRates.json';
+
+// Add this map for state abbreviations to full names
+const stateNameMap: { [key: string]: string } = {
+  'AL': 'Alabama', 'AK': 'Alaska', 'AZ': 'Arizona', 'AR': 'Arkansas',
+  'CA': 'California', 'CO': 'Colorado', 'CT': 'Connecticut', 'DE': 'Delaware',
+  'FL': 'Florida', 'GA': 'Georgia', 'HI': 'Hawaii', 'ID': 'Idaho',
+  'IL': 'Illinois', 'IN': 'Indiana', 'IA': 'Iowa', 'KS': 'Kansas',
+  'KY': 'Kentucky', 'LA': 'Louisiana', 'ME': 'Maine', 'MD': 'Maryland',
+  'MA': 'Massachusetts', 'MI': 'Michigan', 'MN': 'Minnesota', 'MS': 'Mississippi',
+  'MO': 'Missouri', 'MT': 'Montana', 'NE': 'Nebraska', 'NV': 'Nevada',
+  'NH': 'New Hampshire', 'NJ': 'New Jersey', 'NM': 'New Mexico', 'NY': 'New York',
+  'NC': 'North Carolina', 'ND': 'North Dakota', 'OH': 'Ohio', 'OK': 'Oklahoma',
+  'OR': 'Oregon', 'PA': 'Pennsylvania', 'RI': 'Rhode Island', 'SC': 'South Carolina',
+  'SD': 'South Dakota', 'TN': 'Tennessee', 'TX': 'Texas', 'UT': 'Utah',
+  'VT': 'Vermont', 'VA': 'Virginia', 'WA': 'Washington', 'WV': 'West Virginia',
+  'WI': 'Wisconsin', 'WY': 'Wyoming'
+};
+
+type SalaryType = 'hourly' | 'monthly' | 'annual';
+
+function grossToMonthly(gross: number, type: SalaryType): number {
+  if (type === 'hourly') return gross * 40 * 52 / 12;
+  if (type === 'annual') return gross / 12;
+  return gross;
+}
+
+function calcNetMonthly(gross: number, type: SalaryType, state: string, ownCar: boolean): number {
+  const monthlyGross = grossToMonthly(gross, type);
+  const taxRate = (taxRates as Record<string, number>)[state] ?? 0.05;
+  // Assume 7.65% FICA + state tax
+  const fica = 0.0765;
+  let net = monthlyGross * (1 - fica - taxRate);
+  if (ownCar) {
+    net -= 500; // Subtract $500 if own a car
+  }
+  return net > 0 ? net : 0;
+}
+
+export default function Home() {
+  const [salary, setSalary] = useState(60000);
+  const [salaryType, setSalaryType] = useState<SalaryType>('annual');
+  const [state, setState] = useState('CA');
+  const [city, setCity] = useState('');
+  const [ownCar, setOwnCar] = useState(false);
+  const [livingAlone, setLivingAlone] = useState(false);
+  const [netMonthly, setNetMonthly] = useState(0);
+  const [mode, setMode] = useState<'manual' | 'location'>('location');
+  const [manualRent, setManualRent] = useState<number | ''>('');
+  const [neighborhood, setNeighborhood] = useState('');
+
+  useEffect(() => {
+    setNetMonthly(calcNetMonthly(salary, salaryType, state, ownCar));
+  }, [salary, salaryType, state, ownCar]);
+
+  useEffect(() => {
+    if (stateNameMap[state] === "District of Columbia") {
+      setCity("Washington");
+    }
+  }, [state]);
+
+  // Map abbreviation to full state name for InsightsPanel
+  const displayName = stateNameMap[state] || state;
+  // Get median rent for the selected state
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const statesData = require('../data/statesData.json');
+  const cityData = require('../data/cityData.json');
+  const stateData = statesData[displayName as keyof typeof statesData];
+  const estimatedRent = stateData ? stateData.medianRent : 0;
+  const cityMedianRent = city && cityData[displayName] && cityData[displayName][city] ? cityData[displayName][city].medianRent : null;
+
+  // Get the appropriate rent value based on selections
+  const getRentValue = () => {
+    if (mode === 'manual' && manualRent) {
+      return Number(manualRent);
+    }
+    if (displayName === 'District of Columbia' && city === 'Washington' && neighborhood) {
+      return cityData[displayName][city].neighborhoods[neighborhood].medianRent;
+    }
+    if (city && cityData[displayName]?.[city]) {
+      return cityData[displayName][city].medianRent;
+    }
+    return stateData?.medianRent || 0;
+  };
+
+  const rentForBurden = getRentValue();
+
+  return (
+    <div style={{ maxWidth: 1200, margin: '0 auto', padding: 24 }}>
+      {/* Mode Toggle */}
+      <div style={{ display: 'flex', justifyContent: 'center', gap: 16, marginBottom: 24 }}>
+        <button
+          className={mode === 'location' ? 'active' : ''}
+          style={{ padding: '8px 18px', borderRadius: 8, fontWeight: 600, background: mode === 'location' ? '#3F88C5' : '#eee', color: mode === 'location' ? '#fff' : '#222', border: 'none', cursor: 'pointer' }}
+          onClick={() => setMode('location')}
+        >
+          Use My State
+        </button>
+        <button
+          className={mode === 'manual' ? 'active' : ''}
+          style={{ padding: '8px 18px', borderRadius: 8, fontWeight: 600, background: mode === 'manual' ? '#D72638' : '#eee', color: mode === 'manual' ? '#fff' : '#222', border: 'none', cursor: 'pointer' }}
+          onClick={() => setMode('manual')}
+        >
+          Enter My Rent
+        </button>
+      </div>
+      <main style={{ maxWidth: 480, margin: '0 auto' }}>
+        <h1 style={{ fontFamily: 'Poppins, Inter, Work Sans, Arial, sans-serif', fontWeight: 700, fontSize: 36, letterSpacing: '-1px', marginBottom: 8, color: '#222', textAlign: 'center' }}>
+          <span className="accent">My</span><span className="secondary-accent">RentRange</span>
+        </h1>
+        <p style={{ textAlign: 'center', color: '#666', marginBottom: 32, fontSize: 18 }}>Find your affordable rent based on your real take-home pay.</p>
+        {mode === 'location' && (
+          <section className="card">
+            <h2 style={{ color: '#3F88C5', fontWeight: 600 }}>Gross Salary</h2>
+            <SalaryInput value={salary} onChange={setSalary} type={salaryType} onTypeChange={setSalaryType} />
+          </section>
+        )}
+        {mode === 'manual' && (
+          <section className="card">
+            <h2 style={{ color: '#3F88C5', fontWeight: 600 }}>Your Rent</h2>
+            <input
+              type="number"
+              min={0}
+              value={manualRent}
+              onChange={e => setManualRent(e.target.value === '' ? '' : Number(e.target.value))}
+              placeholder="Enter your monthly rent"
+              style={{ width: '100%', padding: 12, fontSize: 16, borderRadius: 12, border: '1px solid #e0e0e0', boxShadow: '0 1px 4px rgba(63, 136, 197, 0.06)' }}
+            />
+          </section>
+        )}
+        <section className="card">
+          <h2 style={{ color: '#3F88C5', fontWeight: 600 }}>Where You Live</h2>
+          <StateSelector 
+            value={state} 
+            onChange={s => {
+              setState(s);
+              setNeighborhood("");
+            }} 
+          />
+          <CitySelector state={displayName} city={city} onChange={setCity} />
+          <NeighborhoodSelector 
+            state={displayName} 
+            city={city} 
+            neighborhood={neighborhood} 
+            onChange={setNeighborhood} 
+          />
+        </section>
+        <section className="card">
+          <h2 style={{ color: '#3F88C5', fontWeight: 600 }}>Options</h2>
+          <OptionToggles ownCar={ownCar} onOwnCarChange={setOwnCar} livingAlone={livingAlone} onLivingAloneChange={setLivingAlone} />
+        </section>
+        <h2 style={{ color: '#D72638', fontWeight: 700 }}>Rent Range</h2>
+        <RentRangeOutput netIncome={netMonthly} livingAlone={livingAlone} />
+      </main>
+      <div style={{ marginTop: 24, width: '100%' }}>
+        <InsightsPanel
+          stateAbbr={state}
+          displayName={displayName}
+          estimatedRent={rentForBurden}
+          netMonthlyIncome={netMonthly}
+          mode={mode}
+          city={city}
+          cityData={cityData}
+          neighborhood={neighborhood}
+        />
+      </div>
+    </div>
+  );
+} 
