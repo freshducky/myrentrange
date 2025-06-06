@@ -2,43 +2,23 @@
   "New York": {
     "New York City": {
       "medianRent": 3200,
-      "medianIncome": 60000,
-      "neighborhoods": {
-        "Manhattan": { "medianRent": 3500, "medianIncome": 85000 },
-        "Brooklyn": { "medianRent": 2800, "medianIncome": 65000 },
-        "Queens": { "medianRent": 2200, "medianIncome": 55000 }
-      }
+      "medianIncome": 60000
     }
   },
   "California": {
     "Los Angeles": {
       "medianRent": 2450,
-      "medianIncome": 52000,
-      "neighborhoods": {
-        "Downtown": { "medianRent": 2200, "medianIncome": 55000 },
-        "Hollywood": { "medianRent": 2000, "medianIncome": 52000 },
-        "Santa Monica": { "medianRent": 2800, "medianIncome": 75000 }
-      }
+      "medianIncome": 52000
     },
     "San Francisco": {
       "medianRent": 3100,
-      "medianIncome": 70000,
-      "neighborhoods": {
-        "Financial District": { "medianRent": 3200, "medianIncome": 85000 },
-        "Mission": { "medianRent": 2800, "medianIncome": 70000 },
-        "Marina": { "medianRent": 3000, "medianIncome": 80000 }
-      }
+      "medianIncome": 70000
     }
   },
   "Illinois": {
     "Chicago": {
       "medianRent": 1800,
-      "medianIncome": 55000,
-      "neighborhoods": {
-        "Loop": { "medianRent": 2000, "medianIncome": 65000 },
-        "Lincoln Park": { "medianRent": 1800, "medianIncome": 60000 },
-        "Wicker Park": { "medianRent": 1700, "medianIncome": 58000 }
-      }
+      "medianIncome": 55000
     }
   },
   "Alabama": {
