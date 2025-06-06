@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import SalaryInput from '../components/SalaryInput';
 import StateSelector from '../components/StateSelector';
 import CitySelector from '../components/CitySelector';
-import NeighborhoodSelector from '../components/NeighborhoodSelector';
 import OptionToggles from '../components/OptionToggles';
 import RentRangeOutput from '../components/RentRangeOutput';
 import InsightsPanel from '../components/InsightsPanel';
@@ -55,7 +54,6 @@ export default function Home() {
   const [netMonthly, setNetMonthly] = useState(0);
   const [mode, setMode] = useState<'manual' | 'location'>('location');
   const [manualRent, setManualRent] = useState<number | ''>('');
-  const [neighborhood, setNeighborhood] = useState('');
 
   useEffect(() => {
     setNetMonthly(calcNetMonthly(salary, salaryType, state, ownCar));
@@ -82,8 +80,8 @@ export default function Home() {
     if (mode === 'manual' && manualRent) {
       return Number(manualRent);
     }
-    if (displayName === 'District of Columbia' && city === 'Washington' && neighborhood) {
-      return cityData[displayName][city].neighborhoods[neighborhood].medianRent;
+    if (displayName === 'District of Columbia' && city === 'Washington') {
+      return cityData[displayName][city].neighborhoods[city].medianRent;
     }
     if (city && cityData[displayName]?.[city]) {
       return cityData[displayName][city].medianRent;
@@ -142,16 +140,9 @@ export default function Home() {
             value={state} 
             onChange={s => {
               setState(s);
-              setNeighborhood("");
             }} 
           />
           <CitySelector state={displayName} city={city} onChange={setCity} />
-          <NeighborhoodSelector 
-            state={displayName} 
-            city={city} 
-            neighborhood={neighborhood} 
-            onChange={setNeighborhood} 
-          />
         </section>
         <section className="card">
           <h2 style={{ color: '#3F88C5', fontWeight: 600 }}>Options</h2>
@@ -169,7 +160,6 @@ export default function Home() {
           mode={mode}
           city={city}
           cityData={cityData}
-          neighborhood={neighborhood}
         />
       </div>
     </div>
