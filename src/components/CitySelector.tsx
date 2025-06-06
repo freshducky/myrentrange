@@ -1,9 +1,11 @@
 import React from 'react';
-import { cityData, CityData } from '../data/cityData';
+import cityData from '../data/cityData.json';
+
+const safeCityData = cityData as Record<string, Record<string, any>>;
 
 interface CitySelectorProps {
   state: string;
-  onCitySelect: (city: CityData) => void;
+  onCitySelect: (city: any) => void;
   selectedCity?: string;
 }
 
@@ -13,13 +15,13 @@ const CitySelector: React.FC<CitySelectorProps> = ({
   selectedCity 
 }) => {
   // Filter cities by state
-  const citiesInState = cityData.filter(city => 
-    city.state.toLowerCase() === state.toLowerCase()
-  );
+  const citiesInState = Object.values(safeCityData)
+    .flat()
+    .filter((city: any) => city.state && city.state.toLowerCase() === state.toLowerCase());
 
   const handleCityChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedCityName = event.target.value;
-    const city = citiesInState.find(c => c.name === selectedCityName);
+    const city = citiesInState.find((c: any) => c.name === selectedCityName);
     if (city) {
       onCitySelect(city);
     }
@@ -35,7 +37,7 @@ const CitySelector: React.FC<CitySelectorProps> = ({
         className="city-dropdown"
       >
         <option value="">Choose a city...</option>
-        {citiesInState.map(city => (
+        {citiesInState.map((city: any) => (
           <option key={city.name} value={city.name}>
             {city.name}
           </option>
