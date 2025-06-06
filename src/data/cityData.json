@@ -40,5 +40,149 @@
         "Wicker Park": { "medianRent": 1700, "medianIncome": 58000 }
       }
     }
+  },
+  "Alabama": {
+    "Birmingham": { "medianRent": 950, "medianIncome": 48000 }
+  },
+  "Alaska": {
+    "Anchorage": { "medianRent": 1250, "medianIncome": 62000 }
+  },
+  "Arizona": {
+    "Phoenix": { "medianRent": 1350, "medianIncome": 52000 }
+  },
+  "Arkansas": {
+    "Little Rock": { "medianRent": 850, "medianIncome": 45000 }
+  },
+  "Colorado": {
+    "Denver": { "medianRent": 1650, "medianIncome": 58000 }
+  },
+  "Connecticut": {
+    "Hartford": { "medianRent": 1450, "medianIncome": 62000 }
+  },
+  "Delaware": {
+    "Wilmington": { "medianRent": 1250, "medianIncome": 55000 }
+  },
+  "District of Columbia": {
+    "Washington": { "medianRent": 2200, "medianIncome": 75000 }
+  },
+  "Florida": {
+    "Miami": { "medianRent": 1450, "medianIncome": 48000 }
+  },
+  "Georgia": {
+    "Atlanta": { "medianRent": 1240, "medianIncome": 56000 }
+  },
+  "Hawaii": {
+    "Honolulu": { "medianRent": 1950, "medianIncome": 58000 }
+  },
+  "Idaho": {
+    "Boise": { "medianRent": 1150, "medianIncome": 48000 }
+  },
+  "Indiana": {
+    "Indianapolis": { "medianRent": 950, "medianIncome": 48000 }
+  },
+  "Iowa": {
+    "Des Moines": { "medianRent": 950, "medianIncome": 48000 }
+  },
+  "Kansas": {
+    "Wichita": { "medianRent": 950, "medianIncome": 48000 }
+  },
+  "Kentucky": {
+    "Louisville": { "medianRent": 850, "medianIncome": 45000 }
+  },
+  "Louisiana": {
+    "New Orleans": { "medianRent": 950, "medianIncome": 45000 }
+  },
+  "Maine": {
+    "Portland": { "medianRent": 1150, "medianIncome": 48000 }
+  },
+  "Maryland": {
+    "Baltimore": { "medianRent": 1450, "medianIncome": 62000 }
+  },
+  "Massachusetts": {
+    "Boston": { "medianRent": 1650, "medianIncome": 65000 }
+  },
+  "Michigan": {
+    "Detroit": { "medianRent": 1050, "medianIncome": 52000 }
+  },
+  "Minnesota": {
+    "Minneapolis": { "medianRent": 1250, "medianIncome": 58000 }
+  },
+  "Mississippi": {
+    "Jackson": { "medianRent": 850, "medianIncome": 42000 }
+  },
+  "Missouri": {
+    "St. Louis": { "medianRent": 950, "medianIncome": 48000 }
+  },
+  "Montana": {
+    "Billings": { "medianRent": 1150, "medianIncome": 48000 }
+  },
+  "Nebraska": {
+    "Omaha": { "medianRent": 950, "medianIncome": 48000 }
+  },
+  "Nevada": {
+    "Las Vegas": { "medianRent": 1350, "medianIncome": 52000 }
+  },
+  "New Hampshire": {
+    "Manchester": { "medianRent": 1250, "medianIncome": 55000 }
+  },
+  "New Jersey": {
+    "Jersey City": { "medianRent": 1650, "medianIncome": 62000 }
+  },
+  "New Mexico": {
+    "Albuquerque": { "medianRent": 950, "medianIncome": 45000 }
+  },
+  "North Carolina": {
+    "Charlotte": { "medianRent": 1150, "medianIncome": 52000 }
+  },
+  "North Dakota": {
+    "Fargo": { "medianRent": 850, "medianIncome": 52000 }
+  },
+  "Ohio": {
+    "Cleveland": { "medianRent": 950, "medianIncome": 48000 }
+  },
+  "Oklahoma": {
+    "Oklahoma City": { "medianRent": 850, "medianIncome": 45000 }
+  },
+  "Oregon": {
+    "Portland": { "medianRent": 1350, "medianIncome": 55000 }
+  },
+  "Pennsylvania": {
+    "Philadelphia": { "medianRent": 1150, "medianIncome": 52000 }
+  },
+  "Rhode Island": {
+    "Providence": { "medianRent": 1250, "medianIncome": 55000 }
+  },
+  "South Carolina": {
+    "Charleston": { "medianRent": 1050, "medianIncome": 48000 }
+  },
+  "South Dakota": {
+    "Sioux Falls": { "medianRent": 850, "medianIncome": 48000 }
+  },
+  "Tennessee": {
+    "Nashville": { "medianRent": 1150, "medianIncome": 48000 }
+  },
+  "Texas": {
+    "Austin": { "medianRent": 1150, "medianIncome": 52000 }
+  },
+  "Utah": {
+    "Salt Lake City": { "medianRent": 1250, "medianIncome": 52000 }
+  },
+  "Vermont": {
+    "Burlington": { "medianRent": 1250, "medianIncome": 52000 }
+  },
+  "Virginia": {
+    "Arlington": { "medianRent": 1350, "medianIncome": 58000 }
+  },
+  "Washington": {
+    "Seattle": { "medianRent": 1450, "medianIncome": 62000 }
+  },
+  "West Virginia": {
+    "Charleston": { "medianRent": 850, "medianIncome": 42000 }
+  },
+  "Wisconsin": {
+    "Milwaukee": { "medianRent": 1050, "medianIncome": 52000 }
+  },
+  "Wyoming": {
+    "Cheyenne": { "medianRent": 950, "medianIncome": 52000 }
   }
 } 
