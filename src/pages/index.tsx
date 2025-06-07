@@ -102,11 +102,10 @@ export default function Home({ prefillState }: { prefillState?: string } = {}) {
     <>
       <SeoHead title="MyRentRange | Free Rent Range & Affordability Calculator" description="See rent ranges in your area, protect your wallet, and make informed rental decisions with MyRentRange." />
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: 24 }}>
-        <a href="/" style={{ position: 'absolute', left: 32, top: 24, textDecoration: 'none', fontFamily: 'Poppins, Inter, Work Sans, Arial, sans-serif', fontWeight: 700, fontSize: 28, letterSpacing: '-1px', color: '#222', zIndex: 10 }}>
+        <h2 style={{ fontFamily: 'Poppins, Inter, Work Sans, Arial, sans-serif', fontWeight: 700, fontSize: 32, letterSpacing: '-1px', marginBottom: 8, color: '#222', textAlign: 'left' }}>
           <span className="accent">My</span><span className="secondary-accent">RentRange</span>
-        </a>
+        </h2>
         <section style={{ marginBottom: 32 }}>
-          <h2 style={{ color: '#3F88C5', fontWeight: 700, fontSize: 28 }}>What is MyRentRange?</h2>
           <p>MyRentRange is your free rent range calculator, designed to help you understand how much rent you can afford based on your real take-home pay and local data. Whether you're moving to a new city or just want to make sure you're not overpaying, MyRentRange gives you clear, data-driven rent ranges for every U.S. state.</p>
           <p>Use our rent range calculator to compare your income to local rent data, see what's affordable, and make smarter rental decisions. Protect your wallet and avoid rent burden with MyRentRange.</p>
         </section>
