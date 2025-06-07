@@ -6,13 +6,13 @@ export default class MyDocument extends Document {
       <Html>
         <Head>
           <title>MyRentRange</title>
-          <link rel="icon" href="/favicon.ico" />
           {/* Google AdSense */}
           <script
             async
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6587604118170067"
             crossOrigin="anonymous"
           ></script>
+          <link rel="icon" type="image/png" href="/logo-1x1.png" />
         </Head>
         <body>
           <Main />
