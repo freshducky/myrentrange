@@ -129,7 +129,7 @@ export default function Home({ prefillState }: { prefillState?: string } = {}) {
         </div>
         <main style={{ maxWidth: 480, margin: '0 auto' }}>
           <h1 style={{ fontFamily: 'Poppins, Inter, Work Sans, Arial, sans-serif', fontWeight: 700, fontSize: 36, letterSpacing: '-1px', marginBottom: 8, color: '#222', textAlign: 'center' }}>
-            {/* <span className="accent">My</span><span className="secondary-accent">RentRange</span> */}
+            <span className="accent">My</span><span className="secondary-accent">RentRange</span>
           </h1>
           <p style={{ textAlign: 'center', color: '#666', marginBottom: 32, fontSize: 18 }}>Find your affordable rent based on your real take-home pay.</p>
           {mode === 'location' && (
