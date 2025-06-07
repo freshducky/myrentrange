@@ -6,7 +6,7 @@ type Props = {
   displayName: string;
   estimatedRent: number;
   netMonthlyIncome: number;
-  mode?: 'manual' | 'location';
+  mode?: 'manual' | 'location' | 'burden';
   city?: string;
   cityData?: any;
   neighborhood?: string;
