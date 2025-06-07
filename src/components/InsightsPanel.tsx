@@ -48,7 +48,7 @@ export default function InsightsPanel({
     burdenClass = 'text-orange-600';
     burdenIcon = '⚠️';
   } else if (burden > 0) {
-    burdenLabel = 'Safe Rent Load';
+    burdenLabel = 'Safe Rent Burden';
     burdenClass = 'text-green-600';
     burdenIcon = '✅';
   }
