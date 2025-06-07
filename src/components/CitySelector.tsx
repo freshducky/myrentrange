@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import cityData from '../data/cityData.json';
 
 const safeCityData = cityData as Record<string, Record<string, any>>;
@@ -14,13 +14,6 @@ const CitySelector: React.FC<CitySelectorProps> = ({
   onCitySelect, 
   selectedCity 
 }) => {
-  // Special case for DC
-  useEffect(() => {
-    if (state === 'District of Columbia') {
-      onCitySelect('Washington');
-    }
-  }, [state, onCitySelect]);
-
   // Get city names for the selected state
   const isDC = state === 'District of Columbia';
   const citiesInState = isDC
@@ -39,7 +32,7 @@ const CitySelector: React.FC<CitySelectorProps> = ({
       <label htmlFor="city-select">Select City:</label>
       <select 
         id="city-select" 
-        value={selectedCity || (isDC ? 'Washington' : '')} 
+        value={isDC ? 'Washington' : (selectedCity || '')}
         onChange={handleCityChange}
         className="city-dropdown"
         disabled={isDC} // prevent changing for DC
