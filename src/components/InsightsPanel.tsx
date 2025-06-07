@@ -130,8 +130,9 @@ export default function InsightsPanel({
         <div className="space-y-1 text-center">
           <p>💼 <strong>Median Salary:</strong> ${stateData.medianSalary.toLocaleString()}</p>
           {stateData.avgSalary && (
-            <p>📈 <strong>Average Salary:</strong> ${stateData.avgSalary.toLocaleString()}</p>
+            <p>📈 <strong>Average Annual Salary:</strong> ${stateData.avgSalary.toLocaleString()}</p>
           )}
+          <p>💰 <strong>Your Net Monthly Salary:</strong> ${netMonthlyIncome.toLocaleString(undefined, { maximumFractionDigits: 0 })}</p>
           <p>🏠 <strong>Median Monthly Rent:</strong> ${stateData.medianRent.toLocaleString()}</p>
           {stateData.avgRentTopCity && (
             <p>🏙️ <strong>Average Rent:</strong> ${stateData.avgRentTopCity.toLocaleString()}</p>
