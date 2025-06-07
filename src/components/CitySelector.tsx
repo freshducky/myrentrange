@@ -22,7 +22,8 @@ const CitySelector: React.FC<CitySelectorProps> = ({
   }, [state, onCitySelect]);
 
   // Get city names for the selected state
-  const citiesInState = state === 'District of Columbia'
+  const isDC = state === 'District of Columbia';
+  const citiesInState = isDC
     ? ['Washington']
     : state && safeCityData[state]
       ? Object.keys(safeCityData[state])
@@ -38,19 +39,25 @@ const CitySelector: React.FC<CitySelectorProps> = ({
       <label htmlFor="city-select">Select City:</label>
       <select 
         id="city-select" 
-        value={selectedCity || ''} 
+        value={selectedCity || (isDC ? 'Washington' : '')} 
         onChange={handleCityChange}
         className="city-dropdown"
+        disabled={isDC} // prevent changing for DC
       >
-        <option value="">Choose a city...</option>
-        {citiesInState.map((cityName: string) => (
-          <option key={cityName} value={cityName}>
-            {cityName}
-          </option>
-        ))}
+        {isDC ? (
+          <option value="Washington">Washington</option>
+        ) : (
+          <>
+            <option value="">Choose a city...</option>
+            {citiesInState.map((cityName: string) => (
+              <option key={cityName} value={cityName}>
+                {cityName}
+              </option>
+            ))}
+          </>
+        )}
       </select>
-      
-      {citiesInState.length === 0 && (
+      {!isDC && citiesInState.length === 0 && (
         <p className="no-cities-message">
           No cities available for {state}
         </p>
