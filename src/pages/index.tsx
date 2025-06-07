@@ -61,12 +61,6 @@ export default function Home({ prefillState }: { prefillState?: string } = {}) {
   }, [salary, salaryType, state, ownCar]);
 
   useEffect(() => {
-    if (stateNameMap[state] === "District of Columbia") {
-      setCity("Washington");
-    }
-  }, [state]);
-
-  useEffect(() => {
     if (prefillState) {
       setState(prefillState);
     }
@@ -98,6 +92,13 @@ export default function Home({ prefillState }: { prefillState?: string } = {}) {
 
   // Map abbreviation to full state name for InsightsPanel
   const displayName = stateNameMap[state] || state;
+
+  useEffect(() => {
+    if (state === 'DC' || stateNameMap[state] === 'District of Columbia' || displayName === 'District of Columbia') {
+      setCity('Washington');
+    }
+  }, [state, displayName]);
+
   // Get median rent for the selected state
   // eslint-disable-next-line @typescript-eslint/no-var-requires
   const statesData = require('../data/statesData.json');
@@ -165,7 +166,7 @@ export default function Home({ prefillState }: { prefillState?: string } = {}) {
           <section className="card">
             <h2 style={{ color: '#3F88C5', fontWeight: 600 }}>Where You Live</h2>
             <StateSelector value={state} onChange={setState} />
-            <CitySelector state={displayName} onCitySelect={setCity} selectedCity={city} />
+            <CitySelector state={displayName} onCitySelect={setCity} selectedCity={displayName === 'District of Columbia' ? 'Washington' : city} />
           </section>
           {mode === 'location' && (
             <section className="card">
