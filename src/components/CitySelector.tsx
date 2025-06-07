@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import cityData from '../data/cityData.json';
 
 const safeCityData = cityData as Record<string, Record<string, any>>;
@@ -26,6 +26,13 @@ const CitySelector: React.FC<CitySelectorProps> = ({
     const selectedCityName = event.target.value;
     onCitySelect(selectedCityName);
   };
+
+  // Key fix: ensure Washington is selected when DC is selected
+  useEffect(() => {
+    if (isDC) {
+      onCitySelect('Washington');
+    }
+  }, [isDC, onCitySelect]);
 
   return (
     <div className="city-selector">
