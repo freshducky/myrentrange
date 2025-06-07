@@ -3,6 +3,12 @@ import cityData from '../data/cityData.json';
 
 const safeCityData = cityData as Record<string, Record<string, any>>;
 
+// Map of states that should default to a single city
+const stateDefaultCityMap: Record<string, string> = {
+  'District of Columbia': 'Washington',
+  // Add more special cases here if needed
+};
+
 interface CitySelectorProps {
   state: string;
   onCitySelect: (city: string) => void;
@@ -14,10 +20,10 @@ const CitySelector: React.FC<CitySelectorProps> = ({
   onCitySelect, 
   selectedCity 
 }) => {
-  // Get city names for the selected state
-  const isDC = state === 'District of Columbia';
-  const citiesInState = isDC
-    ? ['Washington']
+  const defaultCity = stateDefaultCityMap[state] || null;
+
+  const citiesInState = defaultCity
+    ? [defaultCity]
     : state && safeCityData[state]
       ? Object.keys(safeCityData[state])
       : [];
@@ -27,25 +33,25 @@ const CitySelector: React.FC<CitySelectorProps> = ({
     onCitySelect(selectedCityName);
   };
 
-  // Key fix: ensure Washington is selected when DC is selected
+  // Sync parent selectedCity when defaultCity applies
   useEffect(() => {
-    if (isDC) {
-      onCitySelect('Washington');
+    if (defaultCity) {
+      onCitySelect(defaultCity);
     }
-  }, [isDC, onCitySelect]);
+  }, [defaultCity, onCitySelect]);
 
   return (
     <div className="city-selector">
       <label htmlFor="city-select">Select City:</label>
       <select 
         id="city-select" 
-        value={isDC ? 'Washington' : (selectedCity || '')}
+        value={defaultCity ? defaultCity : (selectedCity || '')}
         onChange={handleCityChange}
         className="city-dropdown"
-        disabled={isDC} // prevent changing for DC
+        disabled={!!defaultCity}
       >
-        {isDC ? (
-          <option value="Washington">Washington</option>
+        {defaultCity ? (
+          <option value={defaultCity}>{defaultCity}</option>
         ) : (
           <>
             <option value="">Choose a city...</option>
@@ -57,7 +63,7 @@ const CitySelector: React.FC<CitySelectorProps> = ({
           </>
         )}
       </select>
-      {!isDC && citiesInState.length === 0 && (
+      {!defaultCity && citiesInState.length === 0 && (
         <p className="no-cities-message">
           No cities available for {state}
         </p>
