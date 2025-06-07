@@ -133,9 +133,9 @@ export default function InsightsPanel({
             <p>📈 <strong>Average Annual Salary:</strong> ${stateData.avgSalary.toLocaleString()}</p>
           )}
           <p>💰 <strong>Your Net Monthly Salary:</strong> ${netMonthlyIncome.toLocaleString(undefined, { maximumFractionDigits: 0 })}</p>
-          <p>🏠 <strong>Median Monthly Rent:</strong> ${stateData.medianRent.toLocaleString()}</p>
+          <p>🏠 <strong>{displayName} Median Monthly Rent:</strong> ${stateData.medianRent.toLocaleString()}</p>
           {stateData.avgRentTopCity && (
-            <p>🏙️ <strong>Average Rent:</strong> ${stateData.avgRentTopCity.toLocaleString()}</p>
+            <p>🏙️ <strong>{displayName} Average Rent:</strong> ${stateData.avgRentTopCity.toLocaleString()}</p>
           )}
           <p>💸 <strong>State Income Tax:</strong> {stateData.stateTax}</p>
         </div>
