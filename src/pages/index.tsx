@@ -162,6 +162,11 @@ export default function Home({ prefillState }: { prefillState?: string } = {}) {
             <span className="accent">My</span><span className="secondary-accent">RentRange</span>
           </h1>
           <p style={{ textAlign: 'center', color: '#666', marginBottom: 32, fontSize: 18 }}>Find your affordable rent based on your real take-home pay.</p>
+          <section className="card">
+            <h2 style={{ color: '#3F88C5', fontWeight: 600 }}>Where You Live</h2>
+            <StateSelector value={state} onChange={setState} />
+            <CitySelector state={displayName} onCitySelect={setCity} selectedCity={city} />
+          </section>
           {mode === 'location' && (
             <section className="card">
               <h2 style={{ color: '#3F88C5', fontWeight: 600 }}>Gross Salary</h2>
@@ -183,11 +188,6 @@ export default function Home({ prefillState }: { prefillState?: string } = {}) {
           )}
           {mode === 'burden' && (
             <>
-              <section className="card">
-                <h2 style={{ color: '#3F88C5', fontWeight: 600 }}>Where You Live</h2>
-                <StateSelector value={state} onChange={setState} />
-                <CitySelector state={displayName} onCitySelect={setCity} selectedCity={city} />
-              </section>
               <section className="card">
                 <h2 style={{ color: '#3F88C5', fontWeight: 600 }}>Your Monthly Rent</h2>
                 <input
