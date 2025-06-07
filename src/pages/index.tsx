@@ -6,6 +6,7 @@ import OptionToggles from '../components/OptionToggles';
 import RentRangeOutput from '../components/RentRangeOutput';
 import InsightsPanel from '../components/InsightsPanel';
 import taxRates from '../../data/taxRates.json';
+import SeoHead from '../components/SeoHead';
 
 // Add this map for state abbreviations to full names
 const stateNameMap: { [key: string]: string } = {
@@ -92,76 +93,84 @@ export default function Home() {
   const rentForBurden = getRentValue();
 
   return (
-    <div style={{ maxWidth: 1200, margin: '0 auto', padding: 24 }}>
-      {/* Mode Toggle */}
-      <div style={{ display: 'flex', justifyContent: 'center', gap: 16, marginBottom: 24 }}>
-        <button
-          className={mode === 'location' ? 'active' : ''}
-          style={{ padding: '8px 18px', borderRadius: 8, fontWeight: 600, background: mode === 'location' ? '#3F88C5' : '#eee', color: mode === 'location' ? '#fff' : '#222', border: 'none', cursor: 'pointer' }}
-          onClick={() => setMode('location')}
-        >
-          Use My State
-        </button>
-        <button
-          className={mode === 'manual' ? 'active' : ''}
-          style={{ padding: '8px 18px', borderRadius: 8, fontWeight: 600, background: mode === 'manual' ? '#D72638' : '#eee', color: mode === 'manual' ? '#fff' : '#222', border: 'none', cursor: 'pointer' }}
-          onClick={() => setMode('manual')}
-        >
-          Enter My Rent
-        </button>
-      </div>
-      <main style={{ maxWidth: 480, margin: '0 auto' }}>
-        <h1 style={{ fontFamily: 'Poppins, Inter, Work Sans, Arial, sans-serif', fontWeight: 700, fontSize: 36, letterSpacing: '-1px', marginBottom: 8, color: '#222', textAlign: 'center' }}>
-          <span className="accent">My</span><span className="secondary-accent">RentRange</span>
-        </h1>
-        <p style={{ textAlign: 'center', color: '#666', marginBottom: 32, fontSize: 18 }}>Find your affordable rent based on your real take-home pay.</p>
-        {mode === 'location' && (
+    <>
+      <SeoHead title="MyRentRange | Free Rent Range & Affordability Calculator" description="See rent ranges in your area, protect your wallet, and make informed rental decisions with MyRentRange." />
+      <div style={{ maxWidth: 1200, margin: '0 auto', padding: 24 }}>
+        <section style={{ marginBottom: 32 }}>
+          <h2 style={{ color: '#3F88C5', fontWeight: 700, fontSize: 28 }}>What is MyRentRange?</h2>
+          <p>MyRentRange is your free rent range calculator, designed to help you understand how much rent you can afford based on your real take-home pay and local data. Whether you're moving to a new city or just want to make sure you're not overpaying, MyRentRange gives you clear, data-driven rent ranges for every U.S. state.</p>
+          <p>Use our rent range calculator to compare your income to local rent data, see what's affordable, and make smarter rental decisions. Protect your wallet and avoid rent burden with MyRentRange.</p>
+        </section>
+        {/* Mode Toggle */}
+        <div style={{ display: 'flex', justifyContent: 'center', gap: 16, marginBottom: 24 }}>
+          <button
+            className={mode === 'location' ? 'active' : ''}
+            style={{ padding: '8px 18px', borderRadius: 8, fontWeight: 600, background: mode === 'location' ? '#3F88C5' : '#eee', color: mode === 'location' ? '#fff' : '#222', border: 'none', cursor: 'pointer' }}
+            onClick={() => setMode('location')}
+          >
+            Use My State
+          </button>
+          <button
+            className={mode === 'manual' ? 'active' : ''}
+            style={{ padding: '8px 18px', borderRadius: 8, fontWeight: 600, background: mode === 'manual' ? '#D72638' : '#eee', color: mode === 'manual' ? '#fff' : '#222', border: 'none', cursor: 'pointer' }}
+            onClick={() => setMode('manual')}
+          >
+            Enter My Rent
+          </button>
+        </div>
+        <main style={{ maxWidth: 480, margin: '0 auto' }}>
+          <h1 style={{ fontFamily: 'Poppins, Inter, Work Sans, Arial, sans-serif', fontWeight: 700, fontSize: 36, letterSpacing: '-1px', marginBottom: 8, color: '#222', textAlign: 'center' }}>
+            <span className="accent">My</span><span className="secondary-accent">RentRange</span>
+          </h1>
+          <p style={{ textAlign: 'center', color: '#666', marginBottom: 32, fontSize: 18 }}>Find your affordable rent based on your real take-home pay.</p>
+          {mode === 'location' && (
+            <section className="card">
+              <h2 style={{ color: '#3F88C5', fontWeight: 600 }}>Gross Salary</h2>
+              <SalaryInput value={salary} onChange={setSalary} type={salaryType} onTypeChange={setSalaryType} />
+            </section>
+          )}
+          {mode === 'manual' && (
+            <section className="card">
+              <h2 style={{ color: '#3F88C5', fontWeight: 600 }}>Your Rent</h2>
+              <input
+                type="number"
+                min={0}
+                value={manualRent}
+                onChange={e => setManualRent(e.target.value === '' ? '' : Number(e.target.value))}
+                placeholder="Enter your monthly rent"
+                style={{ width: '100%', padding: 12, fontSize: 16, borderRadius: 12, border: '1px solid #e0e0e0', boxShadow: '0 1px 4px rgba(63, 136, 197, 0.06)' }}
+              />
+            </section>
+          )}
           <section className="card">
-            <h2 style={{ color: '#3F88C5', fontWeight: 600 }}>Gross Salary</h2>
-            <SalaryInput value={salary} onChange={setSalary} type={salaryType} onTypeChange={setSalaryType} />
-          </section>
-        )}
-        {mode === 'manual' && (
-          <section className="card">
-            <h2 style={{ color: '#3F88C5', fontWeight: 600 }}>Your Rent</h2>
-            <input
-              type="number"
-              min={0}
-              value={manualRent}
-              onChange={e => setManualRent(e.target.value === '' ? '' : Number(e.target.value))}
-              placeholder="Enter your monthly rent"
-              style={{ width: '100%', padding: 12, fontSize: 16, borderRadius: 12, border: '1px solid #e0e0e0', boxShadow: '0 1px 4px rgba(63, 136, 197, 0.06)' }}
+            <h2 style={{ color: '#3F88C5', fontWeight: 600 }}>Where You Live</h2>
+            <StateSelector 
+              value={state} 
+              onChange={s => {
+                setState(s);
+              }} 
             />
+            <CitySelector state={displayName} onCitySelect={setCity} selectedCity={city} />
           </section>
-        )}
-        <section className="card">
-          <h2 style={{ color: '#3F88C5', fontWeight: 600 }}>Where You Live</h2>
-          <StateSelector 
-            value={state} 
-            onChange={s => {
-              setState(s);
-            }} 
+          <section className="card">
+            <h2 style={{ color: '#3F88C5', fontWeight: 600 }}>Options</h2>
+            <OptionToggles ownCar={ownCar} onOwnCarChange={setOwnCar} livingAlone={livingAlone} onLivingAloneChange={setLivingAlone} />
+          </section>
+          <h2 style={{ color: '#D72638', fontWeight: 700 }}>Rent Range</h2>
+          <RentRangeOutput netIncome={netMonthly} livingAlone={livingAlone} />
+        </main>
+        <div style={{ marginTop: 24, width: '100%' }}>
+          <InsightsPanel
+            stateAbbr={state}
+            displayName={displayName}
+            estimatedRent={rentForBurden}
+            netMonthlyIncome={netMonthly}
+            mode={mode}
+            city={city}
+            cityData={cityData}
           />
-          <CitySelector state={displayName} onCitySelect={setCity} selectedCity={city} />
-        </section>
-        <section className="card">
-          <h2 style={{ color: '#3F88C5', fontWeight: 600 }}>Options</h2>
-          <OptionToggles ownCar={ownCar} onOwnCarChange={setOwnCar} livingAlone={livingAlone} onLivingAloneChange={setLivingAlone} />
-        </section>
-        <h2 style={{ color: '#D72638', fontWeight: 700 }}>Rent Range</h2>
-        <RentRangeOutput netIncome={netMonthly} livingAlone={livingAlone} />
-      </main>
-      <div style={{ marginTop: 24, width: '100%' }}>
-        <InsightsPanel
-          stateAbbr={state}
-          displayName={displayName}
-          estimatedRent={rentForBurden}
-          netMonthlyIncome={netMonthly}
-          mode={mode}
-          city={city}
-          cityData={cityData}
-        />
+        </div>
       </div>
-    </div>
+    </>
   );
 } 
