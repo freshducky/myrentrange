@@ -66,6 +66,12 @@ export default function Home({ prefillState }: { prefillState?: string } = {}) {
     }
   }, [state]);
 
+  useEffect(() => {
+    if (prefillState) {
+      setState(prefillState);
+    }
+  }, [prefillState]);
+
   // Map abbreviation to full state name for InsightsPanel
   const displayName = stateNameMap[state] || state;
   // Get median rent for the selected state
