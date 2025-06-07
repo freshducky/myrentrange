@@ -53,7 +53,7 @@ export default function Home({ prefillState }: { prefillState?: string } = {}) {
   const [ownCar, setOwnCar] = useState(false);
   const [livingAlone, setLivingAlone] = useState(false);
   const [netMonthly, setNetMonthly] = useState(0);
-  const [mode, setMode] = useState<'manual' | 'location'>('location');
+  const [mode, setMode] = useState<'manual' | 'location' | 'burden'>('location');
   const [manualRent, setManualRent] = useState<number | ''>('');
 
   useEffect(() => {
@@ -149,6 +149,13 @@ export default function Home({ prefillState }: { prefillState?: string } = {}) {
           >
             Enter My Rent
           </button>
+          <button
+            className={mode === 'burden' ? 'active' : ''}
+            style={{ padding: '8px 18px', borderRadius: 8, fontWeight: 600, background: mode === 'burden' ? '#222' : '#eee', color: mode === 'burden' ? '#fff' : '#222', border: 'none', cursor: 'pointer' }}
+            onClick={() => setMode('burden')}
+          >
+            Rent Burden Calculator
+          </button>
         </div>
         <main style={{ maxWidth: 480, margin: '0 auto' }}>
           <h1 style={{ fontFamily: 'Poppins, Inter, Work Sans, Arial, sans-serif', fontWeight: 700, fontSize: 36, letterSpacing: '-1px', marginBottom: 8, color: '#222', textAlign: 'center' }}>
@@ -174,16 +181,40 @@ export default function Home({ prefillState }: { prefillState?: string } = {}) {
               />
             </section>
           )}
-          <section className="card">
-            <h2 style={{ color: '#3F88C5', fontWeight: 600 }}>Where You Live</h2>
-            <StateSelector 
-              value={state} 
-              onChange={s => {
-                setState(s);
-              }} 
-            />
-            <CitySelector state={displayName} onCitySelect={setCity} selectedCity={city} />
-          </section>
+          {mode === 'burden' && (
+            <>
+              <section className="card">
+                <h2 style={{ color: '#3F88C5', fontWeight: 600 }}>Where You Live</h2>
+                <StateSelector value={state} onChange={setState} />
+                <CitySelector state={displayName} onCitySelect={setCity} selectedCity={city} />
+              </section>
+              <section className="card">
+                <h2 style={{ color: '#3F88C5', fontWeight: 600 }}>Your Monthly Rent</h2>
+                <input
+                  type="number"
+                  min={0}
+                  value={manualRent}
+                  onChange={e => setManualRent(e.target.value === '' ? '' : Number(e.target.value))}
+                  placeholder="Enter your monthly rent"
+                  style={{ width: '100%', padding: 12, fontSize: 16, borderRadius: 12, border: '1px solid #e0e0e0', boxShadow: '0 1px 4px rgba(63, 136, 197, 0.06)' }}
+                />
+              </section>
+              <section className="card">
+                <h2 style={{ color: '#3F88C5', fontWeight: 600 }}>Your Annual Salary (Pre-Tax)</h2>
+                <input
+                  type="number"
+                  min={0}
+                  value={salaryType === 'annual' ? salary : ''}
+                  onChange={e => {
+                    setSalaryType('annual');
+                    setSalary(e.target.value === '' ? 0 : Number(e.target.value));
+                  }}
+                  placeholder="Enter your annual salary"
+                  style={{ width: '100%', padding: 12, fontSize: 16, borderRadius: 12, border: '1px solid #e0e0e0', boxShadow: '0 1px 4px rgba(63, 136, 197, 0.06)' }}
+                />
+              </section>
+            </>
+          )}
           <section className="card">
             <h2 style={{ color: '#3F88C5', fontWeight: 600 }}>Options</h2>
             <OptionToggles ownCar={ownCar} onOwnCarChange={setOwnCar} livingAlone={livingAlone} onLivingAloneChange={setLivingAlone} />
