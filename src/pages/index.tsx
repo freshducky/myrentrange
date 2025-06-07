@@ -45,10 +45,10 @@ function calcNetMonthly(gross: number, type: SalaryType, state: string, ownCar: 
   return net > 0 ? net : 0;
 }
 
-export default function Home() {
+export default function Home({ prefillState }: { prefillState?: string } = {}) {
   const [salary, setSalary] = useState(60000);
   const [salaryType, setSalaryType] = useState<SalaryType>('annual');
-  const [state, setState] = useState('CA');
+  const [state, setState] = useState(prefillState || '');
   const [city, setCity] = useState('');
   const [ownCar, setOwnCar] = useState(false);
   const [livingAlone, setLivingAlone] = useState(false);
