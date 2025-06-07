@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import cityData from '../data/cityData.json';
 
 const safeCityData = cityData as Record<string, Record<string, any>>;
@@ -14,10 +14,19 @@ const CitySelector: React.FC<CitySelectorProps> = ({
   onCitySelect, 
   selectedCity 
 }) => {
+  // Special case for DC
+  useEffect(() => {
+    if (state === 'District of Columbia') {
+      onCitySelect('Washington');
+    }
+  }, [state, onCitySelect]);
+
   // Get city names for the selected state
-  const citiesInState = state && safeCityData[state]
-    ? Object.keys(safeCityData[state])
-    : [];
+  const citiesInState = state === 'District of Columbia'
+    ? ['Washington']
+    : state && safeCityData[state]
+      ? Object.keys(safeCityData[state])
+      : [];
 
   const handleCityChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedCityName = event.target.value;
