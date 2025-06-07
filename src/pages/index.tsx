@@ -7,6 +7,7 @@ import RentRangeOutput from '../components/RentRangeOutput';
 import InsightsPanel from '../components/InsightsPanel';
 import taxRates from '../../data/taxRates.json';
 import SeoHead from '../components/SeoHead';
+import { cities, getCityByFullName } from '../data/cities';
 
 // Add this map for state abbreviations to full names
 const stateNameMap: { [key: string]: string } = {
@@ -94,10 +95,13 @@ export default function Home({ prefillState }: { prefillState?: string } = {}) {
   const displayName = stateNameMap[state] || state;
 
   useEffect(() => {
-    if (state === 'DC' || stateNameMap[state] === 'District of Columbia' || displayName === 'District of Columbia') {
-      setCity('Washington');
+    if (state === 'DC') {
+      const dcCity = cities.find(city => city.state === 'DC');
+      if (dcCity) {
+        setCity(dcCity.name);
+      }
     }
-  }, [state, displayName]);
+  }, [state]);
 
   // Get median rent for the selected state
   // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -112,12 +116,12 @@ export default function Home({ prefillState }: { prefillState?: string } = {}) {
     if (mode === 'manual' && manualRent) {
       return Number(manualRent);
     }
-    if (displayName === 'District of Columbia' && city === 'Washington') {
-      return cityData[displayName][city].neighborhoods[city].medianRent;
+    
+    const selectedCityData = city ? getCityByFullName(`${city}, ${state}`) : null;
+    if (selectedCityData) {
+      return selectedCityData.medianRent;
     }
-    if (city && cityData[displayName]?.[city]) {
-      return cityData[displayName][city].medianRent;
-    }
+    
     return stateData?.medianRent || 0;
   };
 
