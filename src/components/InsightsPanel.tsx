@@ -109,13 +109,10 @@ export default function InsightsPanel({
         </div>
       )}
       <div className="flex items-center justify-center mb-4 gap-2">
-        <span
-          className="block text-3xl font-extrabold text-red-600 tracking-wide"
-          style={{ color: '#D72638', fontWeight: 800 }}
-        >
-          {stateAbbr}
-        </span>
-        <h2 className="text-xl font-bold">Insights</h2>
+        <h2 style={{ fontSize: '2rem', fontWeight: 800, display: 'flex', alignItems: 'center', gap: 12, margin: 0 }}>
+          <span style={{ color: '#D72638', fontWeight: 800 }}>{displayName}</span>
+          <span style={{ color: '#222', fontWeight: 800 }}>Insights</span>
+        </h2>
       </div>
       {neighborhoodStats && (
         <div className="space-y-1 text-center">
