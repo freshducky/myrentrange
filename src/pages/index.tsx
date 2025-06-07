@@ -177,6 +177,11 @@ export default function Home({ prefillState }: { prefillState?: string } = {}) {
           />
         </div>
       </div>
+      <footer style={{ textAlign: 'center', marginTop: 40, padding: '24px 0', color: '#888', fontSize: 15 }}>
+        <a href="/about" style={{ margin: '0 12px', color: '#3F88C5', textDecoration: 'underline' }}>About</a>
+        <a href="/terms" style={{ margin: '0 12px', color: '#3F88C5', textDecoration: 'underline' }}>Terms</a>
+        <a href="/privacy" style={{ margin: '0 12px', color: '#3F88C5', textDecoration: 'underline' }}>Privacy</a>
+      </footer>
     </>
   );
 } 
