@@ -72,6 +72,30 @@ export default function Home({ prefillState }: { prefillState?: string } = {}) {
     }
   }, [prefillState]);
 
+  useEffect(() => {
+    // Only run on first load and if state is not already set
+    if (!state) {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(async (position) => {
+          const { latitude, longitude } = position.coords;
+          try {
+            const response = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`);
+            const data = await response.json();
+            // Try to get state and city from address
+            const foundState = data.address?.state || data.address?.region || data.address?.state_district;
+            const foundCity = data.address?.city || data.address?.town || data.address?.village || data.address?.hamlet;
+            // Try to match state to abbreviation
+            const abbr = Object.keys(stateNameMap).find(key => stateNameMap[key].toLowerCase() === String(foundState).toLowerCase());
+            if (abbr) setState(abbr);
+            if (foundCity) setCity(foundCity);
+          } catch (e) {
+            // Fail silently
+          }
+        });
+      }
+    }
+  }, []);
+
   // Map abbreviation to full state name for InsightsPanel
   const displayName = stateNameMap[state] || state;
   // Get median rent for the selected state
