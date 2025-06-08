@@ -13,6 +13,30 @@
     "San Francisco": {
       "medianRent": 3100,
       "medianIncome": 70000
+    },
+    "San Diego": {
+      "medianRent": 2450,
+      "medianIncome": 52000
+    },
+    "San Jose": {
+      "medianRent": 2450,
+      "medianIncome": 52000
+    },
+    "Fresno": {
+      "medianRent": 1350,
+      "medianIncome": 48000
+    },
+    "Sacramento": {
+      "medianRent": 1650,
+      "medianIncome": 55000
+    },
+    "Oakland": {
+      "medianRent": 2200,
+      "medianIncome": 58000
+    },
+    "Long Beach": {
+      "medianRent": 1950,
+      "medianIncome": 52000
     }
   },
   "Illinois": {
@@ -22,19 +46,27 @@
     }
   },
   "Alabama": {
-    "Birmingham": { "medianRent": 950, "medianIncome": 48000 }
+    "Birmingham": { "medianRent": 950, "medianIncome": 48000 },
+    "Montgomery": { "medianRent": 850, "medianIncome": 45000 }
   },
   "Alaska": {
-    "Anchorage": { "medianRent": 1250, "medianIncome": 62000 }
+    "Anchorage": { "medianRent": 1250, "medianIncome": 62000 },
+    "Fairbanks": { "medianRent": 1150, "medianIncome": 58000 },
+    "Juneau": { "medianRent": 1350, "medianIncome": 65000 }
   },
   "Arizona": {
-    "Phoenix": { "medianRent": 1350, "medianIncome": 52000 }
+    "Phoenix": { "medianRent": 1350, "medianIncome": 52000 },
+    "Tucson": { "medianRent": 1150, "medianIncome": 48000 },
+    "Mesa": { "medianRent": 1250, "medianIncome": 50000 }
   },
   "Arkansas": {
-    "Little Rock": { "medianRent": 850, "medianIncome": 45000 }
+    "Little Rock": { "medianRent": 850, "medianIncome": 45000 },
+    "Fayetteville": { "medianRent": 950, "medianIncome": 48000 }
   },
   "Colorado": {
-    "Denver": { "medianRent": 1650, "medianIncome": 58000 }
+    "Denver": { "medianRent": 1650, "medianIncome": 58000 },
+    "Colorado Springs": { "medianRent": 1350, "medianIncome": 52000 },
+    "Aurora": { "medianRent": 1450, "medianIncome": 55000 }
   },
   "Connecticut": {
     "Hartford": { "medianRent": 1450, "medianIncome": 62000 }
@@ -43,7 +75,7 @@
     "Wilmington": { "medianRent": 1250, "medianIncome": 55000 }
   },
   "District of Columbia": {
-    "Washington": { "medianRent": 2200, "medianIncome": 75000 }
+    "Washington": { "medianRent": 2200, "medianIncome": 85000 }
   },
   "Florida": {
     "Miami": { "medianRent": 1450, "medianIncome": 48000 }
@@ -142,27 +174,42 @@
     "Nashville": { "medianRent": 1150, "medianIncome": 48000 }
   },
   "Texas": {
-    "Austin": { "medianRent": 1150, "medianIncome": 52000 }
+    "Austin": { "medianRent": 1150, "medianIncome": 52000 },
+    "Dallas": { "medianRent": 1150, "medianIncome": 52000 },
+    "Houston": { "medianRent": 1150, "medianIncome": 52000 },
+    "San Antonio": { "medianRent": 1150, "medianIncome": 52000 },
+    "Fort Worth": { "medianRent": 1150, "medianIncome": 52000 },
+    "Plano": { "medianRent": 1350, "medianIncome": 58000 },
+    "Frisco": { "medianRent": 1450, "medianIncome": 62000 }
   },
   "Utah": {
-    "Salt Lake City": { "medianRent": 1250, "medianIncome": 52000 }
+    "Salt Lake City": { "medianRent": 1250, "medianIncome": 52000 },
+    "Provo": { "medianRent": 1150, "medianIncome": 48000 }
   },
   "Vermont": {
-    "Burlington": { "medianRent": 1250, "medianIncome": 52000 }
+    "Burlington": { "medianRent": 1250, "medianIncome": 52000 },
+    "Montpelier": { "medianRent": 1150, "medianIncome": 48000 }
   },
   "Virginia": {
-    "Arlington": { "medianRent": 1350, "medianIncome": 58000 }
+    "Arlington": { "medianRent": 1350, "medianIncome": 58000 },
+    "Virginia Beach": { "medianRent": 1250, "medianIncome": 55000 },
+    "Richmond": { "medianRent": 1150, "medianIncome": 52000 }
   },
   "Washington": {
-    "Seattle": { "medianRent": 1450, "medianIncome": 62000 }
+    "Seattle": { "medianRent": 1450, "medianIncome": 62000 },
+    "Spokane": { "medianRent": 1150, "medianIncome": 52000 },
+    "Vancouver": { "medianRent": 1250, "medianIncome": 55000 }
   },
   "West Virginia": {
-    "Charleston": { "medianRent": 850, "medianIncome": 42000 }
+    "Charleston": { "medianRent": 850, "medianIncome": 42000 },
+    "Morgantown": { "medianRent": 950, "medianIncome": 45000 }
   },
   "Wisconsin": {
-    "Milwaukee": { "medianRent": 1050, "medianIncome": 52000 }
+    "Milwaukee": { "medianRent": 1050, "medianIncome": 52000 },
+    "Madison": { "medianRent": 1150, "medianIncome": 55000 }
   },
   "Wyoming": {
-    "Cheyenne": { "medianRent": 950, "medianIncome": 52000 }
+    "Cheyenne": { "medianRent": 950, "medianIncome": 52000 },
+    "Casper": { "medianRent": 850, "medianIncome": 48000 }
   }
 } 
