@@ -48,13 +48,13 @@ export default function GlossaryPage() {
             {glossary.map(({ term, definition }, idx) => (
               <div key={term}>
                 <button
-                  className="w-full flex justify-between items-center py-4 text-left font-bold text-lg text-gray-900 focus:outline-none"
+                  className="w-full flex flex-row gap-3 items-center py-4 text-left font-bold text-lg text-gray-900 focus:outline-none justify-center sm:justify-between"
                   onClick={() => setOpen(open === idx ? null : idx)}
                   aria-expanded={open === idx}
                   aria-controls={`def-${idx}`}
                 >
                   {term}
-                  <span className={`ml-2 transition-transform ${open === idx ? 'rotate-90' : ''}`}>▶</span>
+                  <span className={`transition-transform ${open === idx ? 'rotate-90' : ''}`}>▶</span>
                 </button>
                 {open === idx && (
                   <div
