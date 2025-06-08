@@ -11,6 +11,7 @@ export default function FAQPage() {
         {/* Top links */}
         <div className="mb-6 flex space-x-6 text-sm">
           <Link href="/" className="text-blue-600 hover:underline">← Return to Calculator</Link>
+          <span className="text-gray-400">|</span>
           <Link href="/glossary" className="text-blue-600 hover:underline">Go to Glossary →</Link>
         </div>
 
