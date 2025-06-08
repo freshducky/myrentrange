@@ -40,18 +40,14 @@ export default function GlossaryPage() {
 
         <h1 className="text-4xl font-bold mb-10">Glossary of Housing & Rental Terms</h1>
 
-        {/* Glossary as a responsive grid of cards */}
-        <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2">
+        <dl className="divide-y divide-gray-200">
           {glossary.map(({ term, definition }) => (
-            <div
-              key={term}
-              className="bg-white border border-gray-200 rounded-lg shadow-sm p-6 flex flex-col"
-            >
-              <div className="text-lg font-bold text-gray-900 mb-2">{term}</div>
-              <div className="text-gray-700 leading-relaxed">{definition}</div>
+            <div key={term} className="py-6 sm:grid sm:grid-cols-3 sm:gap-4">
+              <dt className="text-lg font-semibold text-gray-900">{term}</dt>
+              <dd className="mt-2 text-base text-gray-700 sm:col-span-2 sm:mt-0">{definition}</dd>
             </div>
           ))}
-        </div>
+        </dl>
       </main>
     </>
   );
