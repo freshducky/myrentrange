@@ -140,6 +140,9 @@ export default function Home({ prefillState }: { prefillState?: string } = {}) {
         <section style={{ marginBottom: 32 }}>
           <p>MyRentRange is your free rent range calculator, designed to help you understand how much rent you can afford based on your real take-home pay and local data. Whether you're moving to a new city or just want to make sure you're not overpaying, MyRentRange gives you clear, data-driven rent ranges for every U.S. state.</p>
           <p>Use our rent range calculator to compare your income to local rent data, see what's affordable, and make smarter rental decisions. Protect your wallet and avoid rent burden with MyRentRange.</p>
+          <p style={{ fontSize: '0.95em', color: '#666', marginTop: 8, marginBottom: 0, textAlign: 'left' }}>
+            Want to learn more? <a href="/faq" style={{ color: '#3F88C5', textDecoration: 'underline' }}>See our FAQ and Glossary →</a>
+          </p>
         </section>
         {/* Mode Toggle */}
         <div style={{ display: 'flex', justifyContent: 'center', gap: 16, marginBottom: 24 }}>
@@ -246,6 +249,8 @@ export default function Home({ prefillState }: { prefillState?: string } = {}) {
         <a href="/about" style={{ margin: '0 12px', color: '#3F88C5', textDecoration: 'underline' }}>About</a>
         <a href="/terms" style={{ margin: '0 12px', color: '#3F88C5', textDecoration: 'underline' }}>Terms</a>
         <a href="/privacy" style={{ margin: '0 12px', color: '#3F88C5', textDecoration: 'underline' }}>Privacy</a>
+        <a href="/faq" style={{ margin: '0 12px', color: '#3F88C5', textDecoration: 'underline' }}>FAQ</a>
+        <a href="/glossary" style={{ margin: '0 12px', color: '#3F88C5', textDecoration: 'underline' }}>Glossary</a>
       </footer>
     </>
   );
