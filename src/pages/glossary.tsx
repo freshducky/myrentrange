@@ -23,7 +23,7 @@ export default function GlossaryPage() {
             ['Tenant', 'Person renting a property.'],
             ['Landlord', 'Owner of the property being rented.'],
             ['Utilities', 'Services like electricity, gas, water, trash — may or may not be included in rent.'],
-            ['Renter's Insurance', 'Optional insurance that protects your belongings in case of theft, fire, etc.'],
+            ['Renter’s Insurance', 'Optional insurance that protects your belongings in case of theft, fire, etc.'],
             ['Eviction', 'Legal process where a landlord removes a tenant for violating lease terms.'],
             ['Rent Control', 'Local law limiting how much rent can be increased annually.'],
             ['Habitability', 'Legal standard requiring a rental to be safe and livable.'],
