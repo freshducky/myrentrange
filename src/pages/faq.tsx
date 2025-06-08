@@ -6,7 +6,11 @@ export default function FAQPage() {
       <Head>
         <title>FAQ | MyRentRange</title>
       </Head>
-      <main className="max-w-3xl mx-auto px-4 py-8">
+      <main className="max-w-3xl mx-auto px-4 py-8" style={{ background: '#fff', borderRadius: 12, marginTop: 32, marginBottom: 32, boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
+        <div className="flex flex-row gap-4 mb-6">
+          <a href="/" className="inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Return to Calculator</a>
+          <a href="/glossary" className="inline-block px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 transition">Go to Glossary</a>
+        </div>
         <h1 className="text-3xl font-bold mb-6">Frequently Asked Questions</h1>
 
         <section className="mb-6">
