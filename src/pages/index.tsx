@@ -251,6 +251,7 @@ export default function Home({ prefillState }: { prefillState?: string } = {}) {
         <a href="/privacy" style={{ margin: '0 12px', color: '#3F88C5', textDecoration: 'underline' }}>Privacy</a>
         <a href="/faq" style={{ margin: '0 12px', color: '#3F88C5', textDecoration: 'underline' }}>FAQ</a>
         <a href="/glossary" style={{ margin: '0 12px', color: '#3F88C5', textDecoration: 'underline' }}>Glossary</a>
+        <a href="/donate" style={{ margin: '0 12px', color: '#16a34a', textDecoration: 'underline', fontWeight: 600 }}>Support MyRentRange</a>
       </footer>
     </>
   );

@@ -24,6 +24,10 @@ export default function AdBlockerNotice() {
     <div className="fixed top-0 left-0 w-full bg-red-600 text-white text-center py-3 px-4 z-50 shadow-md flex items-center justify-between">
       <span className="text-sm sm:text-base">
         We noticed you might be using an ad blocker. Some features may not work as expected.
+        <span className="ml-2">
+          If you find this helpful, please consider {" "}
+          <a href="/donate" className="text-green-300 underline hover:text-green-200 font-semibold">supporting the project</a>.
+        </span>
       </span>
       <button
         className="ml-4 bg-white text-red-600 px-3 py-1 rounded text-sm font-semibold hover:bg-gray-100 transition"
