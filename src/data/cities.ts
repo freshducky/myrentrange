@@ -9,6 +9,17 @@ export interface City {
 }
 
 export const cities: City[] = [
+  // District of Columbia (Special Case)
+  {
+    id: 'washington-dc',
+    name: 'Washington',
+    state: 'DC',
+    fullName: 'Washington, DC',
+    isSpecialCase: true,
+    medianRent: 2200,
+    medianIncome: 85000
+  },
+
   // Alabama
   {
     id: 'birmingham-al',
@@ -223,17 +234,6 @@ export const cities: City[] = [
     fullName: 'Dover, DE',
     medianRent: 1150,
     medianIncome: 52000
-  },
-
-  // District of Columbia
-  {
-    id: 'washington-dc',
-    name: 'Washington',
-    state: 'DC',
-    fullName: 'Washington, DC',
-    isSpecialCase: true,
-    medianRent: 2200,
-    medianIncome: 75000
   },
 
   // Florida
