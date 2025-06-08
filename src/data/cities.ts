@@ -945,6 +945,11 @@ export const cities: City[] = [
     id: 'salem-or',
     name: 'Salem',
     state: 'OR',
+    fullName: 'Salem, OR',
+    medianRent: 1150,
+    medianIncome: 48000
+  },
+  {
     id: 'philadelphia-pa',
     name: 'Philadelphia',
     state: 'PA',
