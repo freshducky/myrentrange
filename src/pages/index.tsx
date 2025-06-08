@@ -8,6 +8,7 @@ import InsightsPanel from '../components/InsightsPanel';
 import taxRates from '../../data/taxRates.json';
 import SeoHead from '../components/SeoHead';
 import { cities, getCityByFullName } from '../data/cities';
+import { STATE_NAME_TO_ABBR } from '../data/stateMappings';
 
 // Add this map for state abbreviations to full names
 const stateNameMap: { [key: string]: string } = {
@@ -127,6 +128,8 @@ export default function Home({ prefillState }: { prefillState?: string } = {}) {
 
   const rentForBurden = getRentValue();
 
+  const stateAbbr = STATE_NAME_TO_ABBR[state] || state;
+
   return (
     <>
       <SeoHead title="MyRentRange | Free Rent Range & Affordability Calculator" description="See rent ranges in your area, protect your wallet, and make informed rental decisions with MyRentRange." />
@@ -170,7 +173,7 @@ export default function Home({ prefillState }: { prefillState?: string } = {}) {
           <section className="card">
             <h2 style={{ color: '#3F88C5', fontWeight: 600 }}>Where You Live</h2>
             <StateSelector value={state} onChange={setState} />
-            <CitySelector state={displayName} onCitySelect={setCity} selectedCity={displayName === 'District of Columbia' ? 'Washington' : city} />
+            <CitySelector state={stateAbbr} onCitySelect={setCity} selectedCity={displayName === 'District of Columbia' ? 'Washington' : city} />
           </section>
           {mode === 'location' && (
             <section className="card">
