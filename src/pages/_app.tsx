@@ -1,6 +1,7 @@
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 import AdBlockerNotice from '@/components/AdBlockerNotice';
+import Footer from '@/components/Footer';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -15,6 +16,7 @@ export default function App({ Component, pageProps }: AppProps) {
       </header>
       <AdBlockerNotice />
       <Component {...pageProps} />
+      <Footer />
     </>
   );
 } 
