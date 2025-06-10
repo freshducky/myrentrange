@@ -1,0 +1,4 @@
+# Ezoic ads.txt file
+# Replace this content with the ads.txt lines provided in your Ezoic dashboard.
+# Example:
+# ezoic.com, 12345, DIRECT, f08c47fec0942fa0 
