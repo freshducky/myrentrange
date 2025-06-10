@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import { useState } from 'react';
 
 const glossary = [
   { term: 'Affordable Rent', definition: 'Generally defined as rent that is 30% or less of your take-home income.' },
@@ -25,44 +26,58 @@ const glossary = [
 ];
 
 export default function GlossaryPage() {
+  const [open, setOpen] = useState<number | null>(null);
+
   return (
     <>
       <Head>
         <title>Glossary | MyRentRange</title>
       </Head>
-      <main className="flex justify-center px-2 py-10 bg-gray-50 min-h-screen">
-        <div className="w-full max-w-3xl bg-white rounded-xl shadow-lg p-8 border border-gray-200">
-          {/* Top links */}
+      <main className="flex justify-center px-2 py-8">
+        <div className="w-full max-w-2xl bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+          {/* Top links with vertical bar */}
           <div className="mb-8 flex flex-wrap items-center gap-4 text-sm">
             <Link href="/" className="text-blue-700 underline hover:text-blue-900 transition">← Return to Calculator</Link>
             <span className="text-gray-400">|</span>
             <Link href="/faq" className="text-blue-700 underline hover:text-blue-900 transition">Go to FAQ →</Link>
           </div>
 
-          {/* Title */}
-          <h1 className="text-4xl font-bold mb-2 text-center">Glossary of Housing & Rental Terms</h1>
-          <p className="text-center text-gray-500 mb-8">
-            Clear definitions for renters, first-timers, and anyone navigating the rental market.
-          </p>
+          <h1 className="text-3xl font-bold mb-8 text-center">Glossary of Housing & Rental Terms</h1>
 
-          {/* (Optional) A-Z nav */}
-          <div className="flex flex-wrap justify-center gap-2 mb-8">
-            {'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map(letter => (
-              <span key={letter} className="text-gray-400 text-sm px-1">{letter}</span>
-            ))}
-          </div>
-
-          {/* Glossary entries */}
-          <dl>
-            {glossary.map(({ term, definition }) => (
-              <div key={term} className="py-6 border-b last:border-b-0">
-                <dt className="text-lg font-bold text-gray-900 mb-1">{term}</dt>
-                <dd className="text-base text-gray-700">{definition}</dd>
+          <div className="divide-y divide-gray-200">
+            {glossary.map(({ term, definition }, idx) => (
+              <div key={term}>
+                <button
+                  className="w-full flex flex-row gap-3 items-center py-4 text-left font-bold text-lg text-gray-900 focus:outline-none justify-center sm:justify-between"
+                  onClick={() => setOpen(open === idx ? null : idx)}
+                  aria-expanded={open === idx}
+                  aria-controls={`def-${idx}`}
+                >
+                  {term}
+                  <span className={`transition-transform ${open === idx ? 'rotate-90' : ''}`}>▶</span>
+                </button>
+                {open === idx && (
+                  <div
+                    id={`def-${idx}`}
+                    className="pl-2 pb-4 text-gray-700 text-base animate-fade-in"
+                  >
+                    {definition}
+                  </div>
+                )}
               </div>
             ))}
-          </dl>
+          </div>
         </div>
       </main>
+      <style jsx global>{`
+        @keyframes fade-in {
+          from { opacity: 0; transform: translateY(-4px);}
+          to { opacity: 1; transform: translateY(0);}
+        }
+        .animate-fade-in {
+          animation: fade-in 0.2s ease;
+        }
+      `}</style>
     </>
   );
 } 
